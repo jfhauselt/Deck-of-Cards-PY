@@ -25,6 +25,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Deck_of_Cards_PY.py" />
+    <Compile Include="pokerGame.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="testCase.py">
       <SubType>Code</SubType>
     </Compile>
