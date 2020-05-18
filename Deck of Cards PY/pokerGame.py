@@ -10,7 +10,14 @@ def numberOfTuples(mydeck = mainClasses.Deck,numberOf = int):
     for item in pairTest:
         if pairTest[item] == numberOf:
             pairNum +=1
-    return pairNum
+        #returns the number of pairs found
+        return pairNum
 
 def isPair(mydeck = mainClasses.Deck):
     return numberOfTuples(mydeck, 2) == 1
+def isTwoPair(mydeck = mainClasses.Deck):
+    return numberOfTuples(mydeck,2) == 2
+def isThreeOfAKind(myhand = mainClasses.Deck):
+    return numberOfTuples(mymyhand,3) == 1
+def isFourOfAKind(myhand = mainClasses.Deck):
+    return numberOfTuples(myhand,4) == 1
