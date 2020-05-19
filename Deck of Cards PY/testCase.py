@@ -1,4 +1,5 @@
 import mainClasses
+import pokerGame
 
 def testShuffle():
     for i in range(1000):
@@ -11,4 +12,9 @@ def testDraw():
     myHand = mainClasses.createHand(mydeck)
     for i in myHand:
         print(i)
+
+
+def stopTest(myFunction):
+
+
 

@@ -17,7 +17,9 @@ class Deck:
         return self.deckorder.pop()
     def __iter__(self):
         return self.deckorder.__iter__()
-
+    def show(self):
+        for item in self.deckorder:
+            print(item)
 #utilities
 
 #creates standard 52 card deck
