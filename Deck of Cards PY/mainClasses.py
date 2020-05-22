@@ -1,14 +1,14 @@
 import random
-class Card:
+class Card():
     def __init__(self, suit, rank):
         self.suit = suit
-        self.rank = rank
+        self.rank = str(rank)
     def __str__(self):
         return self.suit + " " + self.rank
 
-class Deck:
+class Deck():
     def __init__(self):
-        self.deckorder = []
+        self.deckorder = []        
     def add(self,card):
         self.deckorder.append(card)
     def shuffle(self):
@@ -34,7 +34,7 @@ def createDeck():
 
 #takes a standard deck and creates a standard 5 card hand
 
-def createHand(mydeck: Deck):
+def createHand(mydeck):
     tempHand = Deck()
     for i in range(5):
         tempHand.add(mydeck.draw())

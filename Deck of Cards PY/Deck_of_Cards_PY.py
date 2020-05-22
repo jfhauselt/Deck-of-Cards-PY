@@ -3,15 +3,9 @@ import random
 import testCase
 import mainClasses
 import pokerGame
+import test_1
 #main
 
-testCase.testShuffle()
-testCase.testDraw()
+test_1.Tests1().pairTest()
 
-mydeck = mainClasses.createDeck()
-mydeck.shuffle()
-myhand = mainClasses.createHand(mydeck)
-for item in myhand:
-    print(item)
-print(pokerGame.isPair(mydeck))
-
+test_1.Tests1().threeOfAKindTest()
