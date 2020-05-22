@@ -21,3 +21,14 @@ def isThreeOfAKind(myhand : mainClasses.Deck):
     return numberOfTuples(myhand,3) == 1
 def isFourOfAKind(myhand : mainClasses.Deck):
     return numberOfTuples(myhand,4) == 1
+
+def isFlush(mydeck):
+    flushTest ={}
+    for card in mydeck:
+        if card.suit in flushTest:
+            flushTest[card.suit] +=1
+        else:
+            flushTest[card.suit] = 1
+    return len(flushTest) == 1
+            
+    
