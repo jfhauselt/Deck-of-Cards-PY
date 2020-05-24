@@ -1,8 +1,8 @@
 import random
 class Card():
     def __init__(self, suit, rank):
-        self.suit = suit
-        self.rank = str(rank)
+        self.suit = suit.lower()
+        self.rank = str(rank).upper()
     def __str__(self):
         return self.suit + " " + self.rank
 

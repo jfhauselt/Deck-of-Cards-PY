@@ -31,7 +31,7 @@ class Tests1(unittest.TestCase):
         mydeck.add(mainClasses.Card("clubs",10))
         mydeck.add( mainClasses.Card("hearts",10))
         self.assertFalse(pokerGame.isThreeOfAKind(mydeck))
-        mydeck.add(mainClasses.Card("clubs","k"))
+        mydeck.add(mainClasses.Card("clubs","K"))
         self.assertFalse(pokerGame.isThreeOfAKind(mydeck))
 
     def fourOfAKindTest(self):
@@ -42,6 +42,40 @@ class Tests1(unittest.TestCase):
         self.assertFalse(pokerGame.isFourOfAKind(mydeck))
         mydeck.add( mainClasses.Card("hearts",10))
         self.assertTrue(pokerGame.isFourOfAKind(mydeck))
+
+    def flushTest(self):
+        mydeck = mainClasses.Deck()
+        mydeck.add( mainClasses.Card("hearts","A"))
+        mydeck.add( mainClasses.Card("hearts",10))
+        mydeck.add( mainClasses.Card("hearts","J"))
+        mydeck.add( mainClasses.Card("hearts","K"))
+        mydeck.add( mainClasses.Card("hearts","Q"))
+        self.assertTrue(pokerGame.isFlush(mydeck))
+        mydeck.add( mainClasses.Card("clubs","Q"))
+        self.assertFalse(pokerGame.isFlush(mydeck))
+
+    def straightTest(self):
+        mydeck = mainClasses.Deck()
+        mydeck.add( mainClasses.Card("hearts","A"))
+        mydeck.add( mainClasses.Card("hearts","2"))
+        mydeck.add( mainClasses.Card("hearts",3))
+        mydeck.add( mainClasses.Card("hearts",4))
+        mydeck.add( mainClasses.Card("hearts",5))
+        self.assertTrue(pokerGame.isStraight(mydeck))
+        mydeck = mainClasses.Deck()
+        mydeck.add( mainClasses.Card("hearts","A"))
+        mydeck.add( mainClasses.Card("hearts","Q"))
+        mydeck.add( mainClasses.Card("hearts","j"))
+        mydeck.add( mainClasses.Card("hearts","10"))
+        mydeck.add( mainClasses.Card("hearts","K"))
+        self.assertTrue(pokerGame.isStraight(mydeck))
+        mydeck = mainClasses.Deck()
+        mydeck.add( mainClasses.Card("hearts","A"))
+        mydeck.add( mainClasses.Card("hearts","Q"))
+        mydeck.add( mainClasses.Card("hearts","A"))
+        mydeck.add( mainClasses.Card("hearts","4"))
+        mydeck.add( mainClasses.Card("hearts","2"))
+        self.assertFalse(pokerGame.isStraight(mydeck))
 
 
         

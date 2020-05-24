@@ -30,5 +30,22 @@ def isFlush(mydeck):
         else:
             flushTest[card.suit] = 1
     return len(flushTest) == 1
-            
-    
+
+#straight can also return a royal flush so be careful later on
+def isStraight(myDeck):
+    refList = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"]
+    refList2 = ["A" , "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K",]
+    testLst = []
+    for card in myDeck:
+        testLst.append(refList.index(card.rank))
+    testLst.sort()
+    if testLst[len(testLst) -1] - testLst[0] == len(myDeck.deckorder) -1 :
+        return True
+    testLst = []
+    for card in myDeck:
+        testLst.append(refList2.index(card.rank))
+    testLst.sort()
+    if testLst[len(testLst) -1] - testLst[0] == len(myDeck.deckorder) -1:
+        return True
+    return False
+
