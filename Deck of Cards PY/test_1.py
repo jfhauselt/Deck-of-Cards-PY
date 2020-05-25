@@ -77,6 +77,24 @@ class Tests1(unittest.TestCase):
         mydeck.add( mainClasses.Card("hearts","2"))
         self.assertFalse(pokerGame.isStraight(mydeck))
 
+    def royalFlushTest(self):
+        mydeck = mainClasses.Deck()
+        mydeck.add( mainClasses.Card("hearts","A"))
+        mydeck.add( mainClasses.Card("hearts","10"))
+        mydeck.add( mainClasses.Card("hearts","J"))
+        mydeck.add( mainClasses.Card("hearts","Q"))
+        mydeck.add( mainClasses.Card("hearts","K"))
+        self.assertTrue(pokerGame.isRoyalFlush(mydeck))
+        mydeck = mainClasses.Deck()
+        mydeck.add( mainClasses.Card("hearts","A"))
+        mydeck.add( mainClasses.Card("hearts","A"))
+        mydeck.add( mainClasses.Card("hearts","Q"))
+        mydeck.add( mainClasses.Card("hearts","K"))
+        mydeck.add( mainClasses.Card("hearts","J"))
+        mydeck.add( mainClasses.Card("hearts","10"))
+        self.assertFalse(pokerGame.isRoyalFlush(mydeck))
+
+
 
         
 
