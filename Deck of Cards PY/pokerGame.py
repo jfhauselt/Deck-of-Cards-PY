@@ -56,14 +56,16 @@ def isRoyalFlush(myDeck):
         return False
     royaltest = {}
     for card in myDeck:
-        if card.suit in royaltest:
-            royaltest[card.suit] +=1
+        if card.rank in royaltest:
+            royaltest[card.rank] +=1
         else:
-            royaltest[card.suit] = 1
+            royaltest[card.rank] = 1
     if len(royaltest) != 5:
         return False
-    for items in royaltest:
-        if royaltest[item] > 1:
+    for item in royaltest:
+        if royaltest[item] != 1:
             return False
-    return royaltest.keys >= {"K","Q","J","10","A"}
+    if all(k in royaltest for k in ("K","10","J","Q","A")):
+        return True
+    return False
 

@@ -11,3 +11,4 @@ test_1.Tests1().fourOfAKindTest
 test_1.Tests1().threeOfAKindTest()
 test_1.Tests1().flushTest()
 test_1.Tests1().straightTest()
+test_1.Tests1().royalFlushTest()
