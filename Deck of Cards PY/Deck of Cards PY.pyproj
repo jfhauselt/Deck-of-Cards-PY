@@ -11,6 +11,7 @@
     <OutputPath>.</OutputPath>
     <Name>Deck of Cards PY</Name>
     <RootNamespace>Deck of Cards PY</RootNamespace>
+    <TestFramework>unittest</TestFramework>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
