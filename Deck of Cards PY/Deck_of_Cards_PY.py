@@ -14,3 +14,5 @@ test_1.Tests1().straightTest()
 test_1.Tests1().royalFlushTest()
 
 testCase.percentageTest()
+
+#testCase.testFunction()

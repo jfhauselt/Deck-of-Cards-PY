@@ -35,21 +35,17 @@ def isFlush(mydeck):
 def isStraight(myDeck):
     if isRoyalFlush(myDeck):
         return False
-    refList = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"]
-    refList2 = ["A" , "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K",]
+    refList = ["A" , "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K",]
     testLst = []
     for card in myDeck:
         testLst.append(refList.index(card.rank))
     testLst.sort()
-    if testLst[len(testLst) -1] - testLst[0] == len(myDeck.deckorder) -1 :
-        return True
-    testLst = []
-    for card in myDeck:
-        testLst.append(refList2.index(card.rank))
-    testLst.sort()
-    if testLst[len(testLst) -1] - testLst[0] == len(myDeck.deckorder) -1:
-        return True
-    return False
+    for i in range (len(testLst)-2):
+        if testLst[i] + 1 != testLst[i + 1]: 
+            return False
+    if testLst[len(testLst) -1] != testLst[len(testLst) -2] +1:
+        return False
+    return True
 
 def isRoyalFlush(myDeck):
     if(not isFlush(myDeck)):

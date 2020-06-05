@@ -49,6 +49,19 @@ def percentageTest():
     print("Straights:" + str(straight) + " " + str((straight / trials)*100)+"%")
     print("Flushes:" + str(flush) + " " + str((flush / trials)*100)+"%")
     print("Royal Flushes:" + str(royalFlush) + " " + str((royalFlush / trials)*100)+"%")
+    
+#used to see why a specific function might not be working
+def testFunction():
+    response = ""
+    while response != "1":
+        mydeck = mainClasses.createDeck()
+        mydeck.shuffle()
+        myhand = mainClasses.createHand(mydeck)
+        #sub boolean expression for expression of choice for testing
+        if pokerGame.isStraight(myhand):
+            myhand.show()
+            response = input("1 to quit")
+            
 
     
 
